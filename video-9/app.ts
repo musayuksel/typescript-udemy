@@ -7,4 +7,4 @@ number1 = 5;
 const number2 = 2.8;//if you initialize a variable, it will be of type number
 
 const result = add(number1, number2);
-console.log(result);
+// console.log(result);
