@@ -13,8 +13,8 @@ function addManyTypesWithAliases(
       ? +input1 + +input2
       : input1.toString() + input2.toString();
   }
-  console.log(addManyTypesWithAliases(1, 2, 'as-number')); //3
-  console.log(addManyTypesWithAliases('1', '2', 'as-text')); //12
+  // console.log(addManyTypesWithAliases(1, 2, 'as-number')); //3
+  // console.log(addManyTypesWithAliases('1', '2', 'as-text')); //12
   
   // function greet(user: { name: string; age: number }) {
   //   console.log('Hi, I am ' + user.name);
