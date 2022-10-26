@@ -11,4 +11,4 @@ function generateError(message: string, code: number): never {//never return any
   throw { message: message, errorCode: code };
   // while (true) {} //will also work
 }
-generateError('An error occurred!', 500);
+// generateError('An error occurred!', 500);
