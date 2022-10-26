@@ -11,4 +11,4 @@ const person3 = {
   roles: Role.AUTHOR, //ENUM will be converted to a number
 };
 
-console.log({ 'ROLE>>>>': person3.roles }); // 2
+// console.log({ 'ROLE>>>>': person3.roles }); // 2
