@@ -26,6 +26,6 @@ person2.roles.push('admin'); // This is still allowed
 // favoriteActivities = ['Sports'];
 
 person2.roles.forEach((role) => {
-  console.log({role}); //ts knows that hobby is a string
+//   console.log({role}); //ts knows that hobby is a string
   // console.log(hobby.map()); // !!! ERROR !!!
 });
