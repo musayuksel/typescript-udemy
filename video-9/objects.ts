@@ -12,12 +12,15 @@ const person2 = {
   name: 'Max',
   age: 30,
   hobbies: ['Sports', 'Cooking'], // Array of strings
+  roles: [2, 'author'], // Tuple** - an array with a fixed number of elements where the types of each element are known ((string | number)[])
 };
 
+person2.roles.push('admin'); // This is allowed
+person2.roles[1] = 10; // This is allowed
 // let favoriteActivities: string[]; // Array of strings
 // favoriteActivities = ['Sports'];
 
-person2.hobbies.forEach((hobby) => {
-  console.log(hobby.toUpperCase()); //ts knows that hobby is a string
+person2.roles.forEach((role) => {
+  console.log({role}); //ts knows that hobby is a string
   // console.log(hobby.map()); // !!! ERROR !!!
 });
