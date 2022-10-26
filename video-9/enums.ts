@@ -10,3 +10,5 @@ const person3 = {
   hobbies: ['Sports', 'Cooking'],
   roles: Role.AUTHOR, //ENUM will be converted to a number
 };
+
+console.log({ 'ROLE>>>>': person3.roles }); // 2
