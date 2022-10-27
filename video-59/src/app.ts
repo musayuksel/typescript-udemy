@@ -27,8 +27,11 @@ console.log({ accounting2 });
 //Path: video-63 > Short initialization
 class DepartmentShort {
   private employee: string[] = [];
-  constructor(private name: string) {
-    //this is a shortcut to create a property and assign it to the value passed in the constructor
+//   constructor(private name: string) {
+//     //this is a shortcut to create a property and assign it to the value passed in the constructor
+//     this.name = name;
+//   }
+  constructor(private name: string, private readonly id: string) {//readonly can only be assigned once
     this.name = name;
   }
   sayHello(arg: string = 'hello') {
@@ -39,6 +42,6 @@ class DepartmentShort {
   }
 }
 
-const accountingShort = new DepartmentShort('Accounting');
+const accountingShort = new DepartmentShort('Accounting', 'd1');
 accountingShort.addEmployee('Max');
 console.log({ accountingShort });
