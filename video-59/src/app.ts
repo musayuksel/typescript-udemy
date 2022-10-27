@@ -3,8 +3,11 @@ class Department {
   constructor(name: string) {
     this.name = name;
   }
+  sayHello(arg: string = 'hello') {
+    console.log(`Hello from ${this.name} department!!! ${arg}`);
+  }
 }
 
 const accounting = new Department('Accounting');
 
-console.log({ accounting });
+console.log({ accounting }, accounting.sayHello());
