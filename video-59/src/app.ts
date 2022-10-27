@@ -23,3 +23,22 @@ console.log({ accounting2 });
 //MAIN DISADVANTAGE OF THIS CLASS IS THAT WE CAN ADD ANY PROPERTY TO IT OR CHANGE ANY PROPERTY
 //accounting2.name = 'NEW NAME'; //THIS IS NOT GOOD
 //TO SOLVE THIS WE CAN USE PRIVATE KEYWORD
+
+//Path: video-63 > Short initialization
+class DepartmentShort {
+  private employee: string[] = [];
+  constructor(private name: string) {
+    //this is a shortcut to create a property and assign it to the value passed in the constructor
+    this.name = name;
+  }
+  sayHello(arg: string = 'hello') {
+    console.log(`Hello from ${this.name} department!!! ${arg}`);
+  }
+  addEmployee(employee: string) {
+    this.employee.push(employee);
+  }
+}
+
+const accountingShort = new DepartmentShort('Accounting');
+accountingShort.addEmployee('Max');
+console.log({ accountingShort });
