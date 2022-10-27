@@ -1,6 +1,6 @@
 class Department {
-  name: string; // = 'Accounting';// can assign public by default
-  employee: string[] = [];
+  private name: string; // = 'Accounting';// can assign public by default
+  private employee: string[] = []; //public & private > line 25
   constructor(name: string) {
     this.name = name;
   }
@@ -19,3 +19,7 @@ console.log({ accounting });
 const accounting2 = new Department('Accounting2');
 accounting2.addEmployee('Max2');
 console.log({ accounting2 });
+
+//MAIN DISADVANTAGE OF THIS CLASS IS THAT WE CAN ADD ANY PROPERTY TO IT OR CHANGE ANY PROPERTY
+//accounting2.name = 'NEW NAME'; //THIS IS NOT GOOD
+//TO SOLVE THIS WE CAN USE PRIVATE KEYWORD
