@@ -16,16 +16,32 @@ class Department {
 }
 
 class ITDepartment extends Department {
-  constructor(id: string, public admins: string[]) {
-    super('IT', id);
-    this.admins = admins;
-  }
-  addEmployee(employee: string): void {
-    if (!employee) {
-      return;
+  private lastEmployee: string;
+  set setLastEmployee(value: string) {
+    //complex logic
+    if (!value) {
+      throw new Error('Please pass in a valid value');
     }
-    this.employee.push(employee); //overriding>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    this.lastEmployee = value;
+    this.addEmployee(value);//also any complex logic with parent class
+  }
+
+  get getLastEmployee() {
+    if (this.lastEmployee) {
+      return this.lastEmployee;
+    }
+    throw 'No employee found!!!';
+  }
+
+  constructor(id: string, private newEmployees: string[]) {
+    super('IT', id);
+    this.lastEmployee = newEmployees[0];
   }
 }
-const it = new ITDepartment('d2', ['Max']);
-it.sayHello();
+const it = new ITDepartment('d2', []);
+it.addEmployee('Max');
+it.addEmployee('Manu');
+// console.log('the last employee is >>>> '+it.getLastEmployee);//getter method without ()
+it.setLastEmployee = 'Anna';//setter method without ()
+console.log('the last employee is >>>> '+it.getLastEmployee);//getter method without ()
+console.log({ it });
