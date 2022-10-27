@@ -37,6 +37,8 @@ class ITDepartment extends Department {
     super('IT', id);
     this.lastEmployee = newEmployees[0];
   }
+
+  static myStaticProperty = 'Hello from static property';//you can not access this property with instance of class
 }
 const it = new ITDepartment('d2', []);
 it.addEmployee('Max');
@@ -45,3 +47,5 @@ it.addEmployee('Manu');
 it.setLastEmployee = 'Anna';//setter method without ()
 console.log('the last employee is >>>> '+it.getLastEmployee);//getter method without ()
 console.log({ it });
+
+console.log(ITDepartment.myStaticProperty);//static property
