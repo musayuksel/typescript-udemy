@@ -8,6 +8,7 @@ class Department {
   // }
   protected sayHello(arg: string = 'hello') {
     // protected method> Path: video-66 OVERRIDING PROPERTIES AND THE PROTECTED KEYWORD/src/app.ts
+    //I CAN NOT ACCESS THIS METHOD FROM OUTSIDE OF THE CLASS ANYMORE
     console.log(`Hello from ${this.name} department!!! ${arg}`);
   }
   addEmployee(employee: string) {
@@ -17,7 +18,7 @@ class Department {
 
 const accounting1 = new Department('Accounting', 'd1');
 accounting1.addEmployee('Max');
-// console.log({ accounting1 });
+console.log({ accounting1 },accounting1);
 
 // Path: video-65-INHERITANCE/src/app.ts
 
