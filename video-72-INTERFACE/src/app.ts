@@ -16,7 +16,9 @@ const user1: Person = {
 // user1.speak('Hello there!');
 //IMPLEMENTING INTERFACES TO CLASSES
 interface Greetable {
-   name: string;
+  readonly name: string;
+  // readonly is like a const variable, it can only be set once
+  lastName?: string;
   greet(phrase: string): void;
 }
 
@@ -31,6 +33,8 @@ class PersonClass implements Greetable {
   }
 }
 
-let user2: Greetable;//I can use the interface as a type
-user2 = new PersonClass('Musa', 30);// user2 is an instance of the class PersonClass but type Greetable
+let user2: Greetable; //I can use the interface as a type
+user2 = new PersonClass('Musa', 30); // user2 is an instance of the class PersonClass but type Greetable
 user2.greet('Hello there - I am');
+// user2.name = "31";//I can NOT change the name property because it is readonly
+user2.lastName = 'Musa'; //I can add a new property because it is NOT readonly
