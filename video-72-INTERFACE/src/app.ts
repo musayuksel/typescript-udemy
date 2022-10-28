@@ -31,6 +31,6 @@ class PersonClass implements Greetable {
   }
 }
 
-// let user2: Greetable;//I can use the interface as a type
-const user2 = new PersonClass('Musa', 30);
+let user2: Greetable;//I can use the interface as a type
+user2 = new PersonClass('Musa', 30);// user2 is an instance of the class PersonClass but type Greetable
 user2.greet('Hello there - I am');
