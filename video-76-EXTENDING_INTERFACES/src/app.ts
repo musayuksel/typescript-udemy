@@ -13,7 +13,9 @@ interface Greetable extends Named {
 }
 
 class PersonClass implements Greetable {
-  constructor(public name: string, public lastName: string) {
+  name:string;
+  lastName: string;
+  constructor(name:string, lastName:string) {
     this.name = name;
     this.lastName = lastName;
   }

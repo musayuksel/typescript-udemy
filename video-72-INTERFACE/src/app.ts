@@ -24,7 +24,8 @@ interface Greetable {
 
 class PersonClass implements Greetable {
   //I can implement multiple interfaces with comma separated list
-  constructor(public name: string, public age: number) {
+  name: string;
+  constructor(name: string, public age: number) {
     this.name = name;
     this.age = age;
   }
