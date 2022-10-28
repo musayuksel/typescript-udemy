@@ -27,3 +27,19 @@ user1 = new PersonClass('Max', 'something');
 // user1.name = 'Musa';//ERROR because name is readonly
 user1.lastName = 'Maximilian';
 user1.greet('Hi there - I am');
+
+// Path: video-77-INTERFACE_FUNCTION_TYPES/src/app.ts
+// I want to create function types
+type AddFn = (num1: number, num2: number) => number;
+
+// Using interface
+interface AddFnInterface {
+  (num1: number, num2: number): number; //this is the function type
+}
+
+let add: AddFn;
+add = (number1: number, number2: number) => number1 + number2;
+
+// OR
+let add2: AddFnInterface;
+add2 = (number1: number, number2: number) => number1 + number2;
