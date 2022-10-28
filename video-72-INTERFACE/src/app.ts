@@ -13,4 +13,24 @@ const user1: Person = {
   },
 };
 
-user1.speak('Hello there!');
+// user1.speak('Hello there!');
+//IMPLEMENTING INTERFACES TO CLASSES
+interface Greetable {
+   name: string;
+  greet(phrase: string): void;
+}
+
+class PersonClass implements Greetable {
+  //I can implement multiple interfaces with comma separated list
+  constructor(public name: string, public age: number) {
+    this.name = name;
+    this.age = age;
+  }
+  greet(phrase: string) {
+    console.log(`${phrase} ${this.name}`);
+  }
+}
+
+// let user2: Greetable;//I can use the interface as a type
+const user2 = new PersonClass('Musa', 30);
+user2.greet('Hello there - I am');
