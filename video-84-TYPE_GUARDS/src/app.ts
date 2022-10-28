@@ -21,3 +21,26 @@ type Numeric = number | boolean;
 
 type Universal = Combinable & Numeric;// WILL BE NUMBER
 // type Universal2 = Combinable | Numeric;// WILL BE STRING | NUMBER | BOOLEAN
+
+//TYPE GUARDS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+function add(num1: Combinable, num2: Combinable){
+  // return num1 + num2;//ERROR because it can be a string
+  if(typeof num1 === 'string' || typeof num2 === 'string'){
+    return num1.toString() + num2.toString();
+  }
+  return num1 + num2;
+}
+
+//TYPE GUARDS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+type UnknownEmployee = Employee | Admin;// WILL BE EITHER ONE
+
+function printEmployeeInformation(emp: UnknownEmployee){
+  console.log('Name: ' + emp.name);// WILL WORK because both have name
+  if('privileges' in emp){
+    console.log('Privileges: ' + emp.privileges);
+  }
+  if('startDate' in emp){
+    console.log('Start Date: ' + emp.startDate);
+  }
+}
+printEmployeeInformation(employee1);
