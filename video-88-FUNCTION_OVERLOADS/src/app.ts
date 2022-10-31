@@ -19,3 +19,22 @@ function add(num1: Combinable, num2: Combinable) {
 const result = add('Max', ' Schwarz'); //RETURN TYPE IS STRING so I can use .split() method
 console.log(result.split(' '));
 const a = add(5, 6);
+
+
+//paht: video-89-OPTIONAL_CHAINING/src/app.ts
+interface Person {
+  id: string;
+  name: string;
+  job: {
+    title: string;
+    description: string;
+    getName?: () => string;
+  };
+}
+const fetchedUserData:Person = {
+  id: 'u1',
+  name: 'Max',
+  job: { title: 'CEO', description: 'My own company' },
+};
+
+console.log(fetchedUserData?.job?.getName?.()); //if job or getName is undefined it will return undefined
