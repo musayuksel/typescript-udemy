@@ -40,3 +40,9 @@ function createCourseGoal(
   courseGoal.completeUntil = date;
   return courseGoal as CourseGoal;//we need to cast it to CourseGoal because we are sure that it will have all the properties
 }
+
+// Readonly type
+const names: Readonly<string[]> = ['Max', 'Anna'];//we can't reassign the array 
+// names.push('Manu');//error
+// names.pop();//error
+// names[0] = 'Manu';//error
