@@ -10,3 +10,14 @@ const promise: Promise<string> = new Promise((resolve, reject) => {
 promise.then((data) => {
   console.log(data.split(' '));
 });
+
+// Path: video-95-Generic Function/src/app.ts
+function merge<T, U>(objA: T, objB: U) {
+  return ({ ...objA, ...objB });
+}
+
+const mergedObj = merge({ name: 'Max' }, { age: 30 });// T and U are inferred as {name: string} and {age: number}
+console.log(mergedObj.age);
+
+const mergedObj2 = merge({ name: 'Max' }, {hobbies:['running']});// T and U are inferred as {name: string} and {hobbies: string[]}
+console.log(mergedObj2.hobbies);
