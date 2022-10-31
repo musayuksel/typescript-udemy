@@ -19,3 +19,24 @@ const numberStorage = new DataStorage<number>(); // we can only store NUMBER in 
 numberStorage.addItem(1);
 numberStorage.addItem(2);
 console.log(numberStorage.getItems());
+
+
+// Path: video-101-GENERIC UTILITY TYPES/src/app.ts
+interface CourseGoal {
+  title: string;
+  description: string;
+  completeUntil: Date;
+}
+
+// Partial type
+function createCourseGoal(
+  title: string,
+  description: string,
+  date: Date
+): CourseGoal {//return type is CourseGoal
+  let courseGoal: Partial<CourseGoal> = {};//this object will have all the properties of CourseGoal but they will be optional
+  courseGoal.title = title;
+  courseGoal.description = description;
+  courseGoal.completeUntil = date;
+  return courseGoal as CourseGoal;//we need to cast it to CourseGoal because we are sure that it will have all the properties
+}
