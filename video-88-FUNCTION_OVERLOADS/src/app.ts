@@ -37,3 +37,6 @@ const fetchedUserData: Person = {
 };
 
 console.log(fetchedUserData?.job?.getName?.()); //if job or getName is undefined it will return undefined
+
+const userInput = '';
+const storedData = userInput ?? 'DEFAULT'; //if userInput is null or undefined it will return DEFAULT, NOT FALSY VALUES
