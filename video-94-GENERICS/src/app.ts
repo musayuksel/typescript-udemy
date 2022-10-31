@@ -27,3 +27,14 @@ function mergeAdvance<T extends object, U extends object>(objA: T, objB: U) {
   // T and U must be objects
   return { ...objA, ...objB };
 }
+
+// Path: video-97-Function Types/src/app.ts
+interface Lengthy {
+  length: number;
+}
+
+function countAndDescribe<T extends Lengthy>(element: T): [T, string] {
+  // T must have length property
+  return [element, `This element has ${element.length} element/s.`];
+}
+console.log(countAndDescribe('Hi there!'));
