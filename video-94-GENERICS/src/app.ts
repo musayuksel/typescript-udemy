@@ -38,3 +38,14 @@ function countAndDescribe<T extends Lengthy>(element: T): [T, string] {
   return [element, `This element has ${element.length} element/s.`];
 }
 console.log(countAndDescribe('Hi there!'));
+
+// Path: video-98-The "keyof" Constraint/src/app.ts
+function extractAndConvert<T extends object, U extends keyof T>(
+  obj: T,
+  key: U
+) {
+  // U must be a key of T
+  return obj[key];
+}
+console.log(extractAndConvert({ name: 'Max' }, 'name'));
+// console.log(extractAndConvert({ name: 'Max' }, 'age')); // ERROR
