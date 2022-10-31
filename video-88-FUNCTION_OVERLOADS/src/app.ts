@@ -20,7 +20,6 @@ const result = add('Max', ' Schwarz'); //RETURN TYPE IS STRING so I can use .spl
 console.log(result.split(' '));
 const a = add(5, 6);
 
-
 //paht: video-89-OPTIONAL_CHAINING/src/app.ts
 interface Person {
   id: string;
@@ -31,7 +30,7 @@ interface Person {
     getName?: () => string;
   };
 }
-const fetchedUserData:Person = {
+const fetchedUserData: Person = {
   id: 'u1',
   name: 'Max',
   job: { title: 'CEO', description: 'My own company' },
